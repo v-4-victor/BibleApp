@@ -2,6 +2,7 @@ package com.v4vic.bibleapp.di
 
 import android.content.Context
 import android.content.res.AssetManager
+import com.v4vic.data.BibleSource
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -32,6 +33,13 @@ internal object AppModule {
     fun providesNetworkJson(): Json = Json {
         ignoreUnknownKeys = true
     }
+
+    @Provides
+    @Singleton
+    fun provideBibleSource(
+        json: Json, assets: AssetManager, scope: CoroutineScope
+    ) = BibleSource(json, assets, scope)
+
     @Provides
     @Singleton
     fun providesCoroutineScope(

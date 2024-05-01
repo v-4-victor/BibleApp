@@ -32,7 +32,7 @@ import javax.inject.Inject
 
 @HiltViewModel
 class MainActivityViewModel @Inject constructor(
-    bibleSource: BibleSource
+    private val bibleSource: BibleSource
 ) : ViewModel() {
     private var currentBook = MutableStateFlow(0)
     private var bookSize = 0
@@ -74,5 +74,8 @@ class MainActivityViewModel @Inject constructor(
                 currentBook.emit(currentBook.value - 1)
             }
         }
+    }
+    fun changeVersion(){
+        bibleSource.changeVersion()
     }
 }
