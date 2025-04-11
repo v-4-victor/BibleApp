@@ -2,6 +2,7 @@ plugins {
     alias(libs.plugins.nowinandroid.android.application)
     alias(libs.plugins.nowinandroid.android.application.compose)
     alias(libs.plugins.nowinandroid.android.application.flavors)
+    alias(libs.plugins.nowinandroid.android.application.firebase)
     alias(libs.plugins.nowinandroid.hilt)
     alias(libs.plugins.kotlin.serialization)
 }
@@ -68,5 +69,9 @@ dependencies {
     implementation(libs.kotlinx.serialization.json)
 
     implementation(libs.androidx.lifecycle.runtimeCompose)
+
+    implementation(libs.firebase.cloud.messaging)
+    implementation(libs.firebase.performance)
+    implementation(platform(libs.firebase.bom))
 
 }
