@@ -1,8 +1,6 @@
 plugins {
     alias(libs.plugins.nowinandroid.android.library)
-    alias(libs.plugins.kotlinAndroid)
     alias(libs.plugins.kotlin.serialization)
-
 }
 
 android {
@@ -30,8 +28,7 @@ dependencies {
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
-    implementation(libs.material)
-    testImplementation(libs.junit)
-    androidTestImplementation(libs.androidx.test.ext.junit)
+    implementation(libs.javax.inject)
+
     androidTestImplementation(libs.androidx.test.espresso.core)
 }

@@ -1,10 +1,6 @@
 plugins {
     alias(libs.plugins.nowinandroid.android.library)
-    alias(libs.plugins.kotlinAndroid)
     alias(libs.plugins.kotlin.serialization)
-    alias(libs.plugins.nowinandroid.android.hilt)
-
-
 }
 android {
     namespace = "com.v4vic.data"
@@ -26,9 +22,12 @@ android {
 }
 
 dependencies {
+    implementation(project(":domain"))
+
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
-    implementation(project(":model"))
+    implementation(libs.javax.inject)
+
     implementation(libs.kotlinx.serialization.json)
 
 }

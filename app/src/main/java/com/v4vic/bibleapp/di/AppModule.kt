@@ -1,8 +1,9 @@
 package com.v4vic.bibleapp.di
 
+import com.v4vic.model.BibleRepository
 import android.content.Context
 import android.content.res.AssetManager
-import com.v4vic.data.BibleSource
+import com.v4vic.data.BibleRepositoryImpl
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -22,6 +23,7 @@ annotation class ApplicationScope
 @Module
 @InstallIn(SingletonComponent::class)
 internal object AppModule {
+
     @Provides
     @Singleton
     fun providesDemoAssetManager(
@@ -36,9 +38,11 @@ internal object AppModule {
 
     @Provides
     @Singleton
-    fun provideBibleSource(
-        json: Json, assets: AssetManager, scope: CoroutineScope
-    ) = BibleSource(json, assets, scope)
+    fun provideBibleRepository(
+        json: Json,
+        assets: AssetManager,
+        scope: CoroutineScope
+    ): BibleRepository = BibleRepositoryImpl(json, assets, scope)
 
     @Provides
     @Singleton

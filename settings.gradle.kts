@@ -25,6 +25,6 @@ dependencyResolutionManagement {
 rootProject.name = "BibleApp"
 include(":app")
 include(":ui_kit")
-include(":model")
+include(":domain")
 include(":data")
 include(":designsystem")

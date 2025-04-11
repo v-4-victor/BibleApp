@@ -1,11 +1,9 @@
 package com.v4vic.ui_kit
 
-import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.pager.PagerState
 import androidx.compose.runtime.saveable.Saver
 import androidx.compose.runtime.saveable.listSaver
 
-@OptIn(ExperimentalFoundationApi::class)
 class PagerStateImpl(
     initialPage: Int = 0,
     initialPageOffsetFraction: Float = 0f,
