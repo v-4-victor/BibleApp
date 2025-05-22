@@ -1,5 +1,6 @@
 package com.v4vic.bibleapp
 
+import android.Manifest
 import android.content.pm.PackageManager
 import android.os.Build
 import android.os.Bundle
@@ -11,7 +12,6 @@ import androidx.activity.viewModels
 import androidx.core.content.ContextCompat
 import com.v4vic.bibleapp.notification.NotificationHelper
 import com.v4vic.bibleapp.screens.BibleApp
-import android.Manifest
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -48,6 +48,8 @@ class MainActivity : ComponentActivity() {
         setContent {
             BibleApp(viewModel = viewModel)
         }
+//        scheduleBibleReminder(this)
+//        scheduleDailyMorningReminder(this)
         // 1. Создаем канал
         NotificationHelper.createChannel(this)
         // 2. Запрашиваем разрешение (Android 13+)

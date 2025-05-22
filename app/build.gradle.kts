@@ -73,5 +73,10 @@ dependencies {
     implementation(libs.firebase.cloud.messaging)
     implementation(libs.firebase.performance)
     implementation(platform(libs.firebase.bom))
+    implementation(libs.firebase.auth)
+    implementation(libs.play.services.auth)
+
+    implementation(libs.androidx.work.ktx)
+    implementation(libs.hilt.ext.work)
 
 }
